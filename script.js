@@ -19,10 +19,10 @@ const sections = [
 const angle = (Math.PI * 2) / sections.length;
 
 // Set the radius and center coordinates
-let radius = Math.min(canvas.width, canvas.height) * 0.4 - 40;
-let outerRadius = radius + 40; // Outer 20px
-let centerX = canvas.width / 2;
-let centerY = canvas.height / 2;
+let radius;
+let outerRadius;
+let centerX;
+let centerY;
 
 // Store the selected section
 let selectedSection = null;
@@ -32,8 +32,8 @@ function setup() {
     canvas.height = Math.min(window.innerHeight, 800);
 
     // Set the radius and center coordinates
-    radius = Math.min(canvas.width, canvas.height) * 0.4 - 40;
-    outerRadius = radius + 40; // Outer 20px
+    radius = Math.min(canvas.width, canvas.height) * 0.4 - 80;
+    outerRadius = radius + 20; // Outer 20px
     centerX = canvas.width / 2;
     centerY = canvas.height / 2;
 }
