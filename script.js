@@ -19,13 +19,24 @@ const sections = [
 const angle = (Math.PI * 2) / sections.length;
 
 // Set the radius and center coordinates
-const radius = Math.min(canvas.width, canvas.height) * 0.4 - 40;
-const outerRadius = radius + 40; // Outer 20px
-const centerX = canvas.width / 2;
-const centerY = canvas.height / 2;
+let radius = Math.min(canvas.width, canvas.height) * 0.4 - 40;
+let outerRadius = radius + 40; // Outer 20px
+let centerX = canvas.width / 2;
+let centerY = canvas.height / 2;
 
 // Store the selected section
 let selectedSection = null;
+
+function setup() {
+    canvas.width = Math.min(window.innerWidth, 800);
+    canvas.height = Math.min(window.innerHeight, 800);
+
+    // Set the radius and center coordinates
+    radius = Math.min(canvas.width, canvas.height) * 0.4 - 40;
+    outerRadius = radius + 40; // Outer 20px
+    centerX = canvas.width / 2;
+    centerY = canvas.height / 2;
+}
 
 // Function to draw the wheel
 function drawWheel() {
@@ -95,6 +106,8 @@ function drawBorder() {
 }
 
 window.onload = function () {
+    setup();
+
     // Event listener to fill a section when clicked
     canvas.addEventListener("click", (e) => {
         const x = e.clientX - canvas.getBoundingClientRect().left - centerX;
